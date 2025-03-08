@@ -1,0 +1,28 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def submit_form():
+    name = name_entry.get()
+    email = email_entry.get()
+    event = event_entry.get()
+    messagebox.showinfo("Success", f"Registered {name} for {event}!")
+
+root = tk.Tk()
+root.title("Event Registration")
+
+tk.Label(root, text="Name").grid(row=0, column=0)
+tk.Label(root, text="Email").grid(row=1, column=0)
+tk.Label(root, text="Event Name").grid(row=2, column=0)
+
+name_entry = tk.Entry(root)
+email_entry = tk.Entry(root)
+event_entry = tk.Entry(root)
+
+name_entry.grid(row=0, column=1)
+email_entry.grid(row=1, column=1)
+event_entry.grid(row=2, column=1)
+
+submit_btn = tk.Button(root, text="Register", command=submit_form)
+submit_btn.grid(row=3, column=1)
+
+root.mainloop()
